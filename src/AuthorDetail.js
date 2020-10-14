@@ -8,10 +8,6 @@ import BookTable from "./BookTable";
 //Route
 import { Redirect, useParams } from "react-router-dom";
 
-const instance = axios.create({
-  baseURL: "https://the-index-api.herokuapp.com",
-});
-
 const AuthorDetail = (props) => {
   const { authorID } = useParams();
 
@@ -40,7 +36,7 @@ const AuthorDetail = (props) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     authors: state.authorsState.authors,
     books: state.booksState.books,
